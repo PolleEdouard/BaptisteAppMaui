@@ -7,9 +7,14 @@
     Shell.FlyoutBehavior="Disabled"
     Title="BaptisteApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <local:CustomTabBar
+        x:Name="customTabBar"
+        BackgroundColor="DarkBlue">
+        <Tab Title="Home" Icon="house.png">
+            <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Title="Setting" Icon="settings.png">
+            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:Settings}" />
+        </Tab>
+    </local:CustomTabBar>
 </Shell>

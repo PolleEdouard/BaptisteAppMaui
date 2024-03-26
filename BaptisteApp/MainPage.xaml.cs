@@ -2,24 +2,29 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private object videoPlayer;
 
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void GoGifPage(object sender, EventArgs e)
         {
-            count+=5;
+            // Naviguer vers la page qui contient le GIF
+            await Navigation.PushAsync(new GifPage());
+        }
+       
 
-            if (count == 1)
-                btnonglet1.Text = $"Clicked {count} time";
-            else
-                btnonglet1.Text = $"Clicked {count} times";
+        private void PlayButton_Clicked(object sender, EventArgs e)
+        {
+            videoPlayer.Play();
+        }
 
-            SemanticScreenReader.Announce(btnonglet1.Text);
+        private void PauseButton_Clicked(object sender, EventArgs e)
+        {
+            videoPlayer.Pause();
         }
     }
+}
 
 }
