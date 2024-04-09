@@ -2,24 +2,23 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void GoGifPage(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            // Naviguer vers la page qui contient le GIF
+            await Navigation.PushAsync(new GifPage());
         }
+        void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            double value = args.NewValue;
+            rotatingLabel.Rotation = value;
+            displayLabel.Text = String.Format("La valeur est {0}", value);
+        }
+
     }
 
 }
