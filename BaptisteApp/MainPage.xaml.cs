@@ -2,7 +2,6 @@
 {
     public partial class MainPage : ContentPage
     {
-        private object videoPlayer;
 
         public MainPage()
         {
@@ -13,18 +12,13 @@
             // Naviguer vers la page qui contient le GIF
             await Navigation.PushAsync(new GifPage());
         }
-       
-
-        private void PlayButton_Clicked(object sender, EventArgs e)
+        void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            videoPlayer.Play();
+            double value = args.NewValue;
+            rotatingLabel.Rotation = value;
+            displayLabel.Text = String.Format("La valeur est {0}", value);
         }
 
-        private void PauseButton_Clicked(object sender, EventArgs e)
-        {
-            videoPlayer.Pause();
-        }
     }
-}
 
 }

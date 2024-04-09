@@ -23,7 +23,17 @@
                     <Image Source="chat.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center"/>
 
                 </StackLayout>
-             
+                <Label x:Name="rotatingLabel"
+               Text="ça tourne !!"
+               FontSize="18"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+                <Slider Maximum="360"
+                ValueChanged="OnSliderValueChanged" />
+                <Label x:Name="displayLabel"
+               Text="(uninitialized)"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
             </StackLayout>
             
 

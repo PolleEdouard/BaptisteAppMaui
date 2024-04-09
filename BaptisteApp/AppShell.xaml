@@ -16,5 +16,11 @@
         <Tab Title="Setting" Icon="settings.png">
             <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:Settings}" />
         </Tab>
+        <Tab Title="Jeu video" Icon="manette.png">
+            <ShellContent Route="JeuVideo" ContentTemplate="{DataTemplate local:JeuVideo}" />
+        </Tab>
+        <Tab Title="Page4" Icon="house.png">
+            <ShellContent Route="NewPage1" ContentTemplate="{DataTemplate local:NewPage1}" />
+        </Tab>
     </local:CustomTabBar>
 </Shell>
