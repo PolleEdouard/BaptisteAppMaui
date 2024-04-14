@@ -11,9 +11,6 @@
         public string image { get; set; }
         public int id { get; set; }
 
-        internal static void Add(ObservableCollection<Coffee> coffees)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

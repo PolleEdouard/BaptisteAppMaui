@@ -15,7 +15,7 @@
 
             <Label Text="Une liste de boisson" Style="{StaticResource Headline}" />
 
-            <CollectionView ItemsSource="{Binding Coffees}" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+            <CollectionView ItemsSource="{Binding Coffee}" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal" Spacing="10">

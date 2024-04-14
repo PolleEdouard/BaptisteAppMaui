@@ -1,60 +1,15 @@
 
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-windows10.0.19041.0)'
-Avant :
-using System.Collections.Generic;
-Après :
-using BaptisteApp.Models;
-using System.Collections.Generic;
-*/
-
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-android)'
-Avant :
-using System.Collections.Generic;
-Après :
-using BaptisteApp.Models;
-using System.Collections.Generic;
-*/
-
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-ios)'
-Avant :
-using System.Collections.Generic;
-Après :
-using BaptisteApp.Models;
-using System.Collections.Generic;
-*/
 using BaptisteApp.Models;
 using System.Collections.ObjectModel;
 using System.Text.Json;
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-windows10.0.19041.0)'
-Avant :
-using System.Threading.Tasks;
-using BaptisteApp.Models;
-Après :
-using System.Threading.Tasks;
-*/
 
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-android)'
-Avant :
-using System.Threading.Tasks;
-using BaptisteApp.Models;
-Après :
-using System.Threading.Tasks;
-*/
-
-/* Modification non fusionnée à partir du projet 'BaptisteApp (net8.0-ios)'
-Avant :
-using System.Threading.Tasks;
-using BaptisteApp.Models;
-Après :
-using System.Threading.Tasks;
-*/
 
 
 namespace BaptisteApp.ViewModel
 {
     public class CafeViewModel
     {
-        public ObservableCollection<Coffee> Coffees { get; } = new ObservableCollection<Coffee>();
+        public ObservableCollection<Coffee> Coffee { get; } = new ObservableCollection<Coffee>();
 
         public CafeViewModel()
         {
@@ -71,9 +26,25 @@ namespace BaptisteApp.ViewModel
             {
                 foreach (var coffee in coffees)
                 {
-                    Coffees.Add(coffee);
+                    Coffee.Add(coffee);
                 }
             }
         }
+        public void AddCoffee(Coffee coffee)
+        {
+            Coffee.Add(coffee);
+            Task.Run(() => SaveBeerAsync(coffee));
+        }
+
+        private async Task SaveBeerAsync(Coffee coffee)
+        {
+            var httpClient = new HttpClient();
+
+            var coffeeJson = JsonSerializer.Serialize(coffee);
+            var content = new StringContent(coffeeJson, System.Text.Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("https://api.sampleapis.com/coffee/add", content);
+        }
+
     }
 }
