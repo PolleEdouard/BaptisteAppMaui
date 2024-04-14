@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaptisteApp.Settings2"
+             Title="Settings2">
+    <StackLayout>
+        <Label Text="carousel" VerticalOptions="Center" />
+        <CarouselView x:Name="carouselView" VerticalOptions="FillAndExpand">
+            <CarouselView.ItemsSource>
+                <x:Array Type="{Type x:String}">
+                    <x:String>Café 1</x:String>
+                    <x:String>Café 2</x:String>
+                    <x:String>Café 3</x:String>
+                    <x:String>Café 4</x:String>
+                    <x:String>Café 5</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout BackgroundColor="Azure" Padding="10">
+                        <Label FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="{Binding .}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </StackLayout>
+</ContentPage>

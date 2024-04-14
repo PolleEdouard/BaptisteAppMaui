@@ -5,7 +5,7 @@ namespace BaptisteApp;
 
 public partial class NewPage1 : ContentPage
 {
-    int count = 0;
+
     public NewPage1()
     {
         InitializeComponent();

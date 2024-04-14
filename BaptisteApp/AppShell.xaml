@@ -14,7 +14,7 @@
             <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
         <Tab Title="bonus" Icon="settings.png">
-            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:Settings}" />
+            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:Settings2}" />
         </Tab>
         <Tab Title="Cafe" Icon="tasse.jpg">
             <ShellContent Route="Cafe" ContentTemplate="{DataTemplate local:Cafe}" />
