@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="imgLoader"
              x:Class="BaptisteApp.GifPage"
+             
              Title="GifPage">
     <VerticalStackLayout Spacing="25" Padding="30" BackgroundColor="DarkBlue">
         <!-- Ajuster les propriétés HeightRequest et WidthRequest pour contrôler la taille d'affichage -->
-        <Image Source="squeezie.gif" Aspect="AspectFit" HeightRequest="300" WidthRequest="300" />
+        <Image Source="squeezie.gif"
+       HeightRequest="200" 
+       HorizontalOptions="Center" 
+       IsAnimationPlaying="True" />
 
         <!-- Bouton pour retourner à la page d'accueil (facultatif si vous utilisez la navigation) -->
         <Button Text="accueil" Clicked="GoHomePage"/>

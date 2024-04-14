@@ -63,6 +63,7 @@
 	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\souris.png" />
 	  <None Remove="Resources\Images\squeezie.gif" />
+	  <None Remove="Resources\Images\tasse.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,10 +79,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="GifPage.xaml">
+	  <MauiXaml Update="Cafe.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="JeuVideo.xaml">
+	  <MauiXaml Update="CoffeeDetail.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="GifPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="NewPage1.xaml">

@@ -17,7 +17,7 @@
                     Text="Super MENU"
                     Style="{StaticResource SubHeadline}"
                     TextColor="Black"/>
-
+                <Button x:Name="GifPageBtn" Text="GIF" Clicked="GoGifPage" HorizontalOptions="Fill" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Image Source="souris.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Image Source="chat.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center"/>
